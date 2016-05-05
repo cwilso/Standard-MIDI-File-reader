@@ -62,7 +62,7 @@ function decodeVariableLengthValue(data, trackOffset ) {
 		i = data.getUint8(idx++);
 		result = result << 7;		// left-shift by 7 bits
 		result += (i & 0x7f);	// mask off the top bit
-	} while (i>0x80);
+	} while (i>=0x80);
 	
 	return {idx:idx,result:result};
 }
